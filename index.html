@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyCast - Premium Weather</title>
+
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+
+<body>
+
+    <div class="app-background"></div>
+    <div class="overlay"></div>
+
+    <div class="container d-flex flex-column min-vh-100 justify-content-center align-items-center py-4">
+
+        <!-- Search Bar -->
+        <div class="search-container mb-4">
+            <div class="input-group">
+                <span class="input-group-text bg-transparent border-0"><i
+                        class="fa-solid fa-magnifying-glass text-white"></i></span>
+                <input type="text" id="cityInput" class="form-control bg-transparent border-0 text-white"
+                    placeholder="Search City..." autocomplete="off">
+                <button class="btn btn-glass" id="searchBtn">Search</button>
+            </div>
+            <div id="searchResults" class="list-group position-absolute w-100 d-none"></div>
+        </div>
+
+        <!-- Main Weather Card -->
+        <div class="weather-card glass-panel text-white p-4 p-md-5" id="weatherContainer" style="display: none;">
+
+            <!-- Header: City & Date -->
+            <div class="d-flex justify-content-between align-items-start mb-4">
+                <div>
+                    <h1 class="display-4 fw-bold mb-0" id="cityName">London</h1>
+                    <p class="lead mb-0 text-white-50" id="currentDate">Mon, 14 Aug 2026</p>
+                </div>
+                <div class="weather-icon-container">
+                    <i class="fa-solid fa-cloud-sun fa-4x" id="weatherIcon"></i>
+                </div>
+            </div>
+
+            <!-- Body: Temperature & Status -->
+            <div class="row align-items-center mb-5">
+                <div class="col-12 col-md-6 mb-3 mb-md-0">
+                    <div class="d-flex align-items-center">
+                        <span class="display-1 fw-bold" id="temperature">24</span>
+                        <span class="fs-1 mt-n4">°C</span>
+                    </div>
+                    <p class="fs-4 fw-light mb-0" id="weatherDesc">Partly Cloudy</p>
+                </div>
+
+                <!-- Details Grid -->
+                <div class="col-12 col-md-6">
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <div class="detail-item p-3 glass-sub-panel rounded-3 text-center">
+                                <i class="fa-solid fa-wind mb-2 text-info"></i>
+                                <div class="small text-white-50">Wind Speed</div>
+                                <div class="fw-bold" id="windSpeed">12 km/h</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="detail-item p-3 glass-sub-panel rounded-3 text-center">
+                                <i class="fa-solid fa-droplet mb-2 text-primary"></i>
+                                <div class="small text-white-50">Humidity</div>
+                                <div class="fw-bold" id="humidity">48%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Initial State / Loader -->
+        <div id="loadingState" class="text-white text-center d-none">
+            <div class="spinner-border text-light" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+
+        <div id="welcomeState" class="text-white text-center mt-5">
+            <h2 class="fw-bold">Welcome to SkyCast</h2>
+            <p class="lead text-white-50">Enter a city to get the latest weather updates.</p>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
