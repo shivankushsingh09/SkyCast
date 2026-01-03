@@ -1,0 +1,17 @@
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Node (if used in future)
+node_modules/
+npm-debug.log
+yarn-error.log
+dist/
+.env
+
+# Editor directories
+.idea/
+.vscode/
+*.swp
